@@ -1,16 +1,16 @@
 variable "vpc_id" {
-  type = string
+  type        = string
   description = "VPC to deploy SGs"
 }
 variable "my_ip" {
-  type = string
+  type        = string
   description = "My public IP"
 }
 variable "env" {
-  type = string
+  type        = string
   description = "Environment"
   validation {
-    condition = contains(["production", "development", "test"], var.env)
+    condition     = contains(["production", "development", "test"], var.env)
     error_message = "Environment must be production, development or test"
   }
 }

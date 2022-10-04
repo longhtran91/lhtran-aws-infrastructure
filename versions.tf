@@ -7,10 +7,10 @@ terraform {
       name = "lhtran-aws-infrastructure"
     }
   }
-  
+
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = ">=4.3"
     }
   }
