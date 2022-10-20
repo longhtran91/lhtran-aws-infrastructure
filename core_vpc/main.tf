@@ -11,7 +11,14 @@ module "core_vpc" {
   azs  = slice(data.aws_availability_zones.available.names, 0, var.num_azs)
 
   private_subnets = var.private_subnets
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = "1"
+  }
   public_subnets  = var.public_subnets
+  public_subnet_tags = {
+    "kubernetes.io/role/elb" = "1"
+  }
+  
 
   enable_dns_hostnames = true
   enable_dns_support   = true
